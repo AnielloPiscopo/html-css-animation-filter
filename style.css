@@ -1,43 +1,181 @@
+/** EX.1 */
 .ex-1-square {
     width: 100px;
     height: 100px;
     border: 1px solid red;
+
+    /*? Codice aggiunto */
+    transition: all 1s ease-out; 
 }
+
+/*? Codice aggiunto */
+.ex-1-square:hover{
+    background: red;
+}
+
+
+
+/** EX.2 */
 .ex-2-square {
     width: 100px;
     height: 100px;
     background: red;
+
+    /*? Codice aggiunto */
+    transition: all 1s ease-in;
 }
+
+/*? Codice aggiunto */
+.ex-2-square:active{
+    width: 100%;
+}
+
+
+
+/** EX.3 */
 .ex-3-square {
     width: 100px;
     height: 100px;
     background: red;
+
+    /*? Codice aggiunto */
+    transition: all 1s ease-out;
 }
+
+/*? Codice aggiunto */
+.ex-3-square:hover{
+    border-radius: 50%;
+}
+
+
+
+/** EX.4 */
 .ex-4-square {
     width: 100px;
     height: 100px;
     background: red;
+
+    /*? Codice aggiunto */
+    animation-name: ex4;
+    animation-duration: 2s;
+    animation-direction: alternate;
 }
+
+/*? Codice aggiunto */
+@keyframes ex4{
+    from{background-color: red;}
+    to{background-color: white;}
+}
+
+
+
+/** EX.5 */
 .ex-5-square {
     margin: 20px;
     width: 60px;
     height: 60px;
     background: red;
+
+    /*? Codice aggiunto */
+    transition: all 1s ease-in;
 }
+
+/*? Codice aggiunto */
+.ex-5-square:hover{
+    transform: scale(2);
+}
+
+.ex-5-square:active{
+    transform: scale(-1);
+}
+
+
+
+/** EX.6-7-8 */
 .ex-6-img, .ex-7-img, .ex-8-img {
     width: 500px;
 }
 
+/*? Codice aggiunto */
+.ex-6-img{
+    filter: grayscale(100%);
+}
+
+.ex-7-img{
+    filter: hue-rotate(90deg);
+    transition: filter 1s ease-in;
+}
+
+.ex-8-img{
+    filter: contrast(100%) grayscale(50%);
+    border-radius: 20px;
+    transition: all 5s ease-in-out;
+}
+
+
+
+/** EX.9 */
 .ex-9-img {
     margin: 50px 100px;
     width: 400px;
+
+    /* ?Codice aggiunto  */
+    filter: contrast(100%) grayscale(50%);
+    border-radius: 20px;
+    transform: scale(-1);
+    transition: all 2s ease-in-out;
 }
+
+
+
+/** EX.10 */
 .ex-10-icon {
     font-size: 60px;
+
+    /* ?Codice aggiunto */
+    animation-name: ex10;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
+
+/* ?Codice aggiunto */
+@keyframes ex10 {
+    0% {
+        transform: rotate(1turn);
+    }
+}
+
+
+
+/* *EX.11 */
 .ex-11-icon {
     font-size: 60px;
 }
+
+/* ?Codice aggiunto */
+.ex-11-icon:hover {
+    animation-name: ex11;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+@keyframes ex11 {
+    0% {
+        transform: rotate(0);
+    }
+
+    90% {
+        transform: rotate(315deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+
+/* *EX.12-13 */
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -66,4 +204,117 @@
     background: #f5f5f5;
     width: 60px;
     height: 20px;
+}
+
+/* ?Codice aggiunto:Ex12 */
+.ex-12-button:hover .ex-12-top-white {
+    animation-name: ex12topWhite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ex12topWhite {
+    0% {
+        left: 10%;
+    }
+    50% {
+        left: calc(100% - 60px);
+    }
+    100% {
+        left: 10%;
+    }
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+    animation-name: ex12bottomWhite;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ex12bottomWhite {
+    0% {
+        right: 20%;
+    }
+    50% {
+        right: calc(100% - 60px);
+    }
+    100% {
+        right: 20%;
+    }
+}
+
+
+/* ?Codice aggiunto:ex13 */
+/* ! ATTENZIONE: L'ESERCIZIO E' STATO COPIATO */
+.ex-13-button:hover .ex-13-top-white {
+    animation: moveTopWhiteCompletely 2s linear;
+}
+@keyframes moveTopWhiteCompletely {
+    0% {
+        left: 10%;
+        top: -10px;
+    }
+
+    30% {
+        left: calc(100% - 30px);
+        top: -10px;
+    }
+
+    45% {
+        left: calc(100% - 30px);
+        top: 100%;
+    }
+
+    75% {
+        left: 0;
+        top: 100%;
+    }
+
+    90% {
+        left: -15px;
+        top: -10px;
+    }
+
+    100% {
+        left: 10%;
+        top: -10px;
+    }
+}
+
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: moveBottomWhiteCompletely 2s linear;
+}
+
+@keyframes moveBottomWhiteCompletely {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+
+    30% {
+        right: calc(100% - 30px);
+        bottom: -10px;
+    }
+
+    45% {
+        right: calc(100% - 30px);
+        bottom: 100%;
+    }
+
+    75% {
+        right: 0;
+        bottom: 100%;
+    }
+
+    90% {
+        right: -15px;
+        bottom: -10px;
+    }
+
+    100% {
+        bottom: -10px;
+        right: 20%;
+    }
 }
